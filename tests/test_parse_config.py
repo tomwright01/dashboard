@@ -52,9 +52,11 @@ class TestUpdateTags:
         dash_db.session.add(t1)
         dash_db.session.commit()
 
-        assert dashboard.models.Scantype.query.get("T1").qc_type == "func"
+        assert dashboard.models.db.session.get(
+            dashboard.models.Scantype, "T1").qc_type == "func"
         pc.update_tags(config)
-        assert dashboard.models.Scantype.query.get("T1").qc_type == "anat"
+        assert dashboard.models.db.session.get(
+            dashboard.models.Scantype, "T1").qc_type == "anat"
 
     def test_deletes_tag_record_if_not_defined_in_config_file(
             self, dash_db, config):
@@ -356,7 +358,8 @@ class TestUpdateStudy:
             self, config, dash_db):
         assert dashboard.models.Study.query.all() == []
         pc.update_study("SPINS", config, skip_delete=True)
-        assert dashboard.models.Study.query.get("SPINS") is not None
+        assert dashboard.models.db.session.get(
+            dashboard.models.Study, "SPINS") is not None
 
     @patch("bin.parse_config.update_site")
     def test_updating_study_calls_update_site_for_configured_sites(
@@ -410,16 +413,19 @@ class TestUpdateStudies:
         assert len(config.get_key("Projects")) > 0
         pc.update_studies(config)
         for study in config.get_key("Projects"):
-            assert dashboard.models.Study.query.get(study) is not None
+            assert dashboard.models.db.session.get(
+                dashboard.models.Study, study) is not None
 
     def test_deletes_studies_not_defined_in_config(self, config, dash_db):
         extra_study = dashboard.models.Study("STUDY5")
         dash_db.session.add(extra_study)
         dash_db.session.commit()
 
-        assert dashboard.models.Study.query.get("STUDY5") is not None
+        assert dashboard.models.db.session.get(
+            dashboard.models.Study, "STUDY5") is not None
         pc.update_studies(config, delete_all=True)
-        assert dashboard.models.Study.query.get("STUDY5") is None
+        assert dashboard.models.db.session.get(
+            dashboard.models.Study, "STUDY5") is None
 
     @pytest.fixture
     def config(self):

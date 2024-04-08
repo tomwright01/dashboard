@@ -7,6 +7,7 @@ Create Date: 2020-12-30 17:52:57.592157
 """
 from alembic import op
 import sqlalchemy as sa
+from sqlalchemy import text
 
 
 # revision identifiers, used by Alembic.
@@ -55,9 +56,11 @@ def upgrade():
     # Transfer existing config to new table
     conn = op.get_bind()
     records = conn.execute(
-        'select project_id, instrument, url, redcap_version '
-        '  from redcap_records '
-        '  group by project_id, instrument, url, redcap_version;'
+        text(
+            'select project_id, instrument, url, redcap_version '
+            '  from redcap_records '
+            '  group by project_id, instrument, url, redcap_version;'
+        )
     )
     op.bulk_insert(
         redcap_config,

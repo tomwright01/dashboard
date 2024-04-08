@@ -8,7 +8,7 @@ or avoiding CSRF vulnerabilities.
 
 from flask_wtf import FlaskForm
 from wtforms import (SelectMultipleField, HiddenField, TextAreaField,
-                     TextField)
+                     StringField)
 from wtforms.validators import DataRequired
 
 
@@ -49,6 +49,6 @@ class AnalysisForm(FlaskForm):
 
     This feature has not yet been fully implemented.
     """
-    name = TextField('Brief name', validators=[DataRequired()])
+    name = StringField('Brief name', validators=[DataRequired()])
     description = TextAreaField('Description', validators=[DataRequired()])
     software = TextAreaField('Software')

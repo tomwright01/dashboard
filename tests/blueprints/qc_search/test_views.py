@@ -10,19 +10,19 @@ from dashboard.blueprints.qc_search import views
 class TestGetTags:
 
     def test_tags_are_not_duplicated(self):
-        user = models.User.query.get(1)
+        user = models.db.session.get(models.User, 1)
         tags = views.get_tags(user)
         expected = self.get_tags_from_db()
         assert sorted(tags) == sorted(expected)
 
     def test_tags_are_sorted(self):
-        user = models.User.query.get(1)
+        user = models.db.session.get(models.User, 1)
         tags = views.get_tags(user)
         expected = self.get_tags_from_db()
         assert tags == sorted(expected)
 
     def test_admin_user_has_access_to_all_tags(self):
-        admin = models.User.query.get(2)
+        admin = models.db.session.get(models.User, 2)
         tags = views.get_tags(admin)
         expected = tests.utils.query_db(
             "SELECT DISTINCT scantypes.tag"

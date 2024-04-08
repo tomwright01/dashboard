@@ -41,7 +41,7 @@ def add_studies(study_conf):
             study.update_site(site, create=True)
 
             for tag in study_conf[study_id][site]:
-                if not models.Scantype.query.get(tag):
+                if not models.db.session.get(models.Scantype, tag):
                     models.db.session.add(models.Scantype(tag))
                 study.update_scantype(site, tag, create=True)
 

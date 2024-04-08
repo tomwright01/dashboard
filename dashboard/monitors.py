@@ -23,7 +23,7 @@ from uuid import uuid4
 from datetime import datetime, timedelta
 
 from dashboard import scheduler
-from .models import Session
+from .models import db, Session
 from .emails import missing_redcap_email
 from .exceptions import MonitorException, SchedulerException
 
@@ -131,7 +131,7 @@ def monitor_redcap_import(name, num, users=None, study=None):
         :obj:`dashboard.exceptions.SchedulerException`: If the job cannot
             be added to the server
     """
-    session = Session.query.get((name, num))
+    session = db.session.get(Session, (name, num))
 
     if not session.timepoint.expects_redcap() or session.redcap_record:
         return
@@ -173,7 +173,7 @@ def check_redcap(name, num, recipients=None):
         :obj:`dashboard.exceptions.MonitorException`: If a matching session
             can't be found.
     """
-    session = Session.query.get((name, num))
+    session = db.session.get(Session, (name, num))
     if not session:
         raise MonitorException("Monitored session {}_{:02d} is no longer in "
                                "database. Cannot verify whether redcap record "

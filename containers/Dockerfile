@@ -1,4 +1,4 @@
-FROM tigrlab/datman:0.1 as prod
+FROM tigrlab/datman:0.2.1 as prod
 
 # NOTE: When building this container, do it from
 # inside the dashboard folder and build with
@@ -11,6 +11,10 @@ COPY containers/entrypoint.sh /entrypoint.sh
 # Copy the requirements and set up the python env first so
 # that rebuilds are faster.
 COPY ./requirements.txt /
+
+# Install requirements for pip installing uwsgi
+RUN apt update && \
+    apt install -y --no-install-recommends gcc python3.11-dev
 
 RUN pip install --upgrade pip && \
     pip install -r /requirements.txt

@@ -6,6 +6,7 @@ Create Date: 2022-06-07 22:12:45.049536
 
 """
 from alembic import op
+from sqlalchemy import text
 
 # revision identifiers, used by Alembic.
 revision = 'b265c18f529c'
@@ -16,10 +17,10 @@ depends_on = None
 
 def upgrade():
     conn = op.get_bind()
-    conn.execute(
+    conn.execute(text(
         "INSERT INTO users(id, first_name, last_name) values "
         "(-1, 'Guest', 'Guest')"
-    )
+    ))
 
 
 def downgrade():

@@ -203,7 +203,8 @@ class TestCreateFromRequest:
     def test_adds_redcap_record_to_session(
             self, mock_http, mock_monitor, det, records):
         mock_http.return_value = self.mock_redcap_export()
-        session = dashboard.models.Session.query.get((self.session[:-3], 1))
+        session = dashboard.models.db.session.get(
+            dashboard.models.Session, (self.session[:-3], 1))
         assert session.redcap_record is None
 
         rc_utils.create_from_request(det)
@@ -216,13 +217,16 @@ class TestCreateFromRequest:
         mock_http.return_value = self.mock_redcap_export()
 
         timepoint = self.session[:-3]
-        session = dashboard.models.Session.query.get((timepoint, 1))
+        session = dashboard.models.db.session.get(
+            dashboard.models.Session, (timepoint, 1))
         if session:
             session.delete()
-        assert dashboard.models.Session.query.get((timepoint, 1)) is None
+        assert dashboard.models.db.session.get(
+            dashboard.models.Session, (timepoint, 1)) is None
         rc_utils.create_from_request(det)
 
-        session = dashboard.models.Session.query.get((timepoint, 1))
+        session = dashboard.models.db.session.get(
+            dashboard.models.Session, (timepoint, 1))
         assert session is not None
 
     def test_updates_redcap_record_if_updates_on_server(
@@ -241,7 +245,8 @@ class TestCreateFromRequest:
         # Resend the data entry trigger
         rc_utils.create_from_request(det)
 
-        session = dashboard.models.Session.query.get((self.session[:-3], 1))
+        session = dashboard.models.db.session.get(
+            dashboard.models.Session, (self.session[:-3], 1))
         assert session is not None
         assert session.redcap_record.record.comment == new_comment
 
@@ -250,7 +255,8 @@ class TestCreateFromRequest:
         mock_http.return_value = self.mock_redcap_export()
         rc_utils.create_from_request(det)
 
-        session = dashboard.models.Session.query.get((self.session[:-3], 1))
+        session = dashboard.models.db.session.get(
+            dashboard.models.Session, (self.session[:-3], 1))
         assert session.redcap_record is not None
         db_record = session.redcap_record.record
 
@@ -261,14 +267,15 @@ class TestCreateFromRequest:
         mock_http.return_value = self.mock_redcap_export()
 
         # Delete the event_ids from config
-        rc = dashboard.models.RedcapConfig.query.get(1)
+        rc = dashboard.models.db.session.get(dashboard.models.RedcapConfig, 1)
         rc.event_ids = None
         dashboard.models.db.session.add(rc)
         dashboard.models.db.session.commit()
 
         assert rc.event_ids is None
         rc_utils.create_from_request(det)
-        record = dashboard.models.RedcapRecord.query.get(1)
+        record = dashboard.models.db.session.get(
+            dashboard.models.RedcapRecord, 1)
         assert record is not None
 
     def test_det_with_different_version_causes_redcap_config_version_update(
@@ -292,7 +299,8 @@ class TestCreateFromRequest:
         mock_http.return_value = self.mock_redcap_export()
         rc_utils.create_from_request(det)
 
-        session = dashboard.models.Session.query.get((self.session[:-3], 1))
+        session = dashboard.models.db.session.get(
+            dashboard.models.Session, (self.session[:-3], 1))
         assert mock_monitor.called_once_with(session)
 
     @patch("dashboard.blueprints.redcap.utils.monitor_scan_download")
@@ -300,14 +308,16 @@ class TestCreateFromRequest:
             self, mock_download, mock_http, mock_scan_monitor, det, records):
         mock_http.return_value = self.mock_redcap_export()
 
-        study_site = dashboard.models.StudySite.query.get(("STUDY", "ABC"))
+        study_site = dashboard.models.db.session.get(
+            dashboard.models.StudySite, ("STUDY", "ABC"))
         study_site.download_script = "/some/path/post_download.sh"
         dashboard.models.db.session.add(study_site)
         dashboard.models.db.session.commit()
 
         rc_utils.create_from_request(det)
 
-        session = dashboard.models.Session.query.get((self.session[:-3], 1))
+        session = dashboard.models.db.session.get(
+            dashboard.models.Session, (self.session[:-3], 1))
         assert mock_download.called_once_with(session)
 
     def mock_redcap_export(self, records=None):

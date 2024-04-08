@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import SubmitField, TextAreaField, TextField, BooleanField
+from wtforms import SubmitField, TextAreaField, StringField, BooleanField
 from wtforms.validators import DataRequired
 
 
@@ -43,7 +43,7 @@ class TimepointCommentsForm(FlaskForm):
 
 
 class NewIssueForm(FlaskForm):
-    title = TextField(
+    title = StringField(
         "Title: ",
         validators=[DataRequired()],
         render_kw={'required': True})

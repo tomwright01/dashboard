@@ -1,22 +1,21 @@
 from flask_wtf import FlaskForm
 
-from wtforms import (SubmitField, HiddenField, TextField, FormField,
-                     BooleanField, FieldList, RadioField, SelectMultipleField)
-from wtforms.fields.html5 import EmailField, TelField
-from wtforms.compat import iteritems
+from wtforms import (SubmitField, HiddenField, StringField, FormField,
+                     BooleanField, FieldList, RadioField, SelectMultipleField,
+                     EmailField, TelField)
 from wtforms.validators import DataRequired
 
 
 class UserForm(FlaskForm):
     id = HiddenField()
-    first_name = TextField('First Name: ',
+    first_name = StringField('First Name: ',
                            validators=[DataRequired()],
                            render_kw={
                                'required': True,
                                'maxlength': '64',
                                'placeholder': 'Jane'
                            })
-    last_name = TextField('Last Name: ',
+    last_name = StringField('Last Name: ',
                           validators=[DataRequired()],
                           render_kw={
                               'required': True,
@@ -34,7 +33,7 @@ class UserForm(FlaskForm):
                           validators=[DataRequired()],
                           choices=[('github', 'GitHub')],
                           default='github')
-    account = TextField('Username: ',
+    account = StringField('Username: ',
                         validators=[DataRequired()],
                         render_kw={
                             'required':
@@ -44,12 +43,12 @@ class UserForm(FlaskForm):
                             'placeholder':
                             'Username used on account ' + 'provider\'s site'
                         })
-    position = TextField('Position: ',
+    position = StringField('Position: ',
                          render_kw={
                              'maxlength': '64',
                              'placeholder': 'Job title or position'
                          })
-    institution = TextField('Institution: ',
+    institution = StringField('Institution: ',
                             render_kw={
                                 'maxlength':
                                 '128',
@@ -61,7 +60,7 @@ class UserForm(FlaskForm):
                          'maxlength': '20',
                          'placeholder': '555-555-5555'
                      })
-    ext = TextField('Extension: ',
+    ext = StringField('Extension: ',
                     render_kw={
                         'maxlength': '10',
                         'placeholder': 'XXXXXXXXXX'
@@ -71,7 +70,7 @@ class UserForm(FlaskForm):
                              'maxlength': '20',
                              'placeholder': '555-555-5555'
                          })
-    alt_ext = TextField('Alt. Extension: ',
+    alt_ext = StringField('Alt. Extension: ',
                         render_kw={
                             'maxlength': '10',
                             'placeholder': 'XXXXXXXXXX'
@@ -136,7 +135,7 @@ class UserAdminForm(UserForm):
             #     Temporarily, this can simply be merged with kwargs.
             kwargs = dict(data, **kwargs)
 
-        for name, field, in iteritems(self._fields):
+        for name, field, in self._fields.items():
             if obj is not None and hasattr(obj, name):
                 # This if statement is the only change made to the original
                 # code for BaseForm.process() - Dawn
@@ -158,7 +157,7 @@ class UserAdminForm(UserForm):
         default with the 'studies' field treated as a special case to
         account for the fact that it is a mapped collection
         """
-        for name, field in iteritems(self._fields):
+        for name, field in self._fields.items():
             if name == 'studies':
                 for study_form in self.studies.entries:
                     if study_form.site_id.data == '':

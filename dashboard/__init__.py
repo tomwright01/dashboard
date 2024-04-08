@@ -173,7 +173,7 @@ def create_app(config=None):
 
     load_blueprints(app)
 
-    if app.debug and app.env == 'development':
+    if app.debug and app.get('env') == 'development':
         # Never run this on a production server!
         setup_devel_ext(app)
 

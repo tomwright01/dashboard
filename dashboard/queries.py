@@ -90,7 +90,7 @@ def get_session(name, num):
     """
     Used by datman. Return a specific session or None
     """
-    return Session.query.get((name, num))
+    return db.session.get(Session, (name, num))
 
 
 def get_timepoint(name, bids_ses=None, study=None):
@@ -98,7 +98,7 @@ def get_timepoint(name, bids_ses=None, study=None):
     Used by datman. Return one timepoint or None
     """
     if not bids_ses:
-        return Timepoint.query.get(name)
+        return db.session.get(Timepoint, name)
 
     query = Timepoint.query.filter(Timepoint.bids_name == name)\
                            .filter(Timepoint.bids_session == bids_ses)
@@ -263,7 +263,7 @@ def get_scantypes(tag_id=None, create=False):
     if not tag_id:
         return Scantype.query.all()
 
-    found = Scantype.query.get(tag_id)
+    found = db.session.get(Scantype, tag_id)
     if found:
         return [found]
 

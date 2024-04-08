@@ -124,7 +124,7 @@ def study(study_id=None, active_tab=None):
     display_metrics = current_app.config['DISPLAY_METRICS']
 
     # get the study object from the database
-    study = Study.query.get(study_id)
+    study = db.session.get(Study, study_id)
 
     # this is used to update the readme text file
     form = StudyOverviewForm()
@@ -416,7 +416,7 @@ def analysis(analysis_id=None):
     if not analysis_id:
         analyses = Analysis.query.all()
     else:
-        analyses = Analysis.query.get(analysis_id)
+        analyses = db.session.get(Analysis, analysis_id)
 
     for analysis in analyses:
         # format the user objects for display on page

@@ -8,7 +8,7 @@ from datetime import datetime, timedelta
 
 from .emails import missing_session_data
 from dashboard.monitors import add_monitor, get_emails
-from dashboard.models import Session, User
+from dashboard.models import Session, User, db
 from dashboard.exceptions import MonitorException
 from dashboard.queue import submit_job
 
@@ -78,7 +78,7 @@ def check_scans(name, num, recipients=None):
         :obj:`dashboard.exceptions.MonitorException`: If a matching session
             can't be found.
     """
-    session = Session.query.get((name, num))
+    session = db.session.get(Session, (name, num))
     if not session:
         raise MonitorException("Monitored session {}_{:02d} is no "
                                "longer in database. Cannot verify whether "
@@ -151,7 +151,7 @@ def monitor_scan_download(session, end_time=None):
 
 
 def download_session(name, num, end_time):
-    session = Session.query.get((name, num))
+    session = db.session.get(Session, (name, num))
     if not session:
         raise MonitorException(
             "Monitored session {}_{} is no longer in database, aborting "
