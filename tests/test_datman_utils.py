@@ -4,6 +4,7 @@ from mock import patch, Mock
 from json import JSONDecodeError
 
 import datman
+from datman.config import config
 import dashboard
 import dashboard.datman_utils as dm_utils
 
@@ -24,7 +25,7 @@ class TestGetManifests:
         def get_path(key):
             raise datman.exceptions.UndefinedSetting
 
-        mock_conf = Mock(spec=datman.config.config)
+        mock_conf = Mock(spec=config)
         mock_conf.get_path = get_path
         mock_config.return_value = mock_conf
 

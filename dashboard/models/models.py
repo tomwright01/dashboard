@@ -138,6 +138,7 @@ class User(PermissionMixin, UserMixin, TableMixin, db.Model):
     analysis_comments = db.relationship('AnalysisComment')
     sessions_reviewed = db.relationship('Session')
     pending_approval = db.relationship('AccountRequest',
+                                       back_populates='user',
                                        uselist=False,
                                        cascade="all, delete")
 
@@ -480,7 +481,8 @@ class AccountRequest(TableMixin, db.Model):
                         db.Integer,
                         db.ForeignKey("users.id", ondelete='CASCADE'),
                         primary_key=True)
-    user = db.relationship('User', uselist=False)
+    user = db.relationship(
+        'User', back_populates="pending_approval", uselist=False)
 
     def __init__(self, user_id):
         self.user_id = user_id
@@ -2390,6 +2392,7 @@ class StudySite(TableMixin, db.Model):
         primaryjoin='and_(StudySite.study_id==StudyUser.study_id,'
         'or_(StudySite.site_id==StudyUser.site_id,'
         'StudyUser.site_id==None))',
+        viewonly=True,
         cascade='all, delete')
     site = db.relationship('Site', back_populates='studies')
     study = db.relationship('Study', back_populates='sites')
@@ -2397,7 +2400,8 @@ class StudySite(TableMixin, db.Model):
                                 back_populates='study_site',
                                 cascade='all, delete',
                                 lazy='joined')
-    expected_scans = db.relationship('ExpectedScan', cascade="all, delete")
+    expected_scans = db.relationship(
+        'ExpectedScan', overlaps="scantypes", cascade="all, delete")
 
     __table_args__ = (UniqueConstraint(study_id, site_id), )
 

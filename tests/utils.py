@@ -95,7 +95,8 @@ def query_db(sql_query):
         list: A list of tuples containing the result.
     """
     try:
-        records = models.db.session.execute(sql_query).fetchall()
+        records = models.db.session.execute(
+            sqlalchemy.text(sql_query)).fetchall()
     except sqlalchemy.exc.ProgrammingError:
         models.db.session.rollback()
         raise

@@ -301,7 +301,7 @@ class TestCreateFromRequest:
 
         session = dashboard.models.db.session.get(
             dashboard.models.Session, (self.session[:-3], 1))
-        assert mock_monitor.called_once_with(session)
+        mock_monitor.assert_called_once_with(session)
 
     @patch("dashboard.blueprints.redcap.utils.monitor_scan_download")
     def test_calls_monitor_scan_download_if_download_script_is_set(
@@ -318,7 +318,7 @@ class TestCreateFromRequest:
 
         session = dashboard.models.db.session.get(
             dashboard.models.Session, (self.session[:-3], 1))
-        assert mock_download.called_once_with(session)
+        mock_download.assert_called_once_with(session)
 
     def mock_redcap_export(self, records=None):
         def export_records(id_list):

@@ -327,9 +327,9 @@ def get_scan_qc(approved=True, blacklisted=True, flagged=True,
             by scan name. Defaults to False.
 
     Returns:
-        list(tuple): A list of tuples of the format
-            (scan name, status, comment), where 'status' is a boolean value
-            that represents whether the scan was approved or
+        list(dict): A list of tuples of the format
+            {name: str, approved: bool, comment: str}, where 'status' is a
+            boolean value that represents whether the scan was approved or
             flagged/blacklisted.
     """
 
@@ -424,8 +424,12 @@ def get_scan_qc(approved=True, blacklisted=True, flagged=True,
     # Restrict output values to only needed columns
     query = query.with_entities(Scan.name, ScanChecklist.approved,
                                 ScanChecklist.comment)
+    output = [
+        {'name': item[0], 'approved': item[1], 'comment': item[2]}
+        for item in query.all()
+    ]
 
-    return query.all()
+    return output
 
 
 def query_metric_values_byid(**kwargs):
