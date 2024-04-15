@@ -29,6 +29,9 @@ jobs:
         run: cd containers/devel && docker-compose up -d
         if: steps.cache.outputs.cache-hit != 'true'
 
+      - name: Install dependencies
+        run: docker exec -t devel_dashboard /bin/bash -c "pip install -r dashboard/docs_requirements.txt"
+
       - name: Build docs
         if: steps.cache.outputs.cache-hit != 'true'
         run: docker exec -t devel_dashboard /bin/bash -c "sphinx-build dashboard/docs dashboard/docs/_build"
