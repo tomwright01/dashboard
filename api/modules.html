@@ -1,19 +1,16 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Dashboard API &#8212; QC Dashboard 0.0.1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=12dfc556" />
+    <script src="../_static/documentation_options.js?v=d45e8c67"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Module contents" href="dashboard.html" />
@@ -21,8 +18,9 @@
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
+
   
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+  
 
   </head><body>
   
@@ -35,19 +33,131 @@
           <div class="body" role="main">
             
   <section id="dashboard-api">
-<h1>Dashboard API<a class="headerlink" href="#dashboard-api" title="Permalink to this heading">¶</a></h1>
+<h1>Dashboard API<a class="headerlink" href="#dashboard-api" title="Link to this heading">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="dashboard.html">Module contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dashboard.html">Module contents</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dashboard.html#dashboard.RegexConverter"><code class="docutils literal notranslate"><span class="pre">RegexConverter</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dashboard.html#dashboard.configure_scheduler"><code class="docutils literal notranslate"><span class="pre">configure_scheduler()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dashboard.html#dashboard.connect_db"><code class="docutils literal notranslate"><span class="pre">connect_db()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dashboard.html#dashboard.create_app"><code class="docutils literal notranslate"><span class="pre">create_app()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dashboard.html#dashboard.load_blueprints"><code class="docutils literal notranslate"><span class="pre">load_blueprints()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dashboard.html#dashboard.setup_devel_ext"><code class="docutils literal notranslate"><span class="pre">setup_devel_ext()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="dashboard.html#submodules">Submodules</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="dashboard.html#module-dashboard.datman_utils">dashboard.datman_utils module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dashboard.html#module-dashboard.emails">dashboard.emails module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dashboard.html#module-dashboard.exceptions">dashboard.exceptions module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dashboard.html#module-dashboard.forms">dashboard.forms module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dashboard.html#module-dashboard.monitors">dashboard.monitors module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dashboard.html#module-dashboard.queries">dashboard.queries module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dashboard.html#module-dashboard.task_scheduler">dashboard.task_scheduler module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dashboard.html#module-dashboard.utils">dashboard.utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dashboard.html#module-dashboard.datman_utils">dashboard.datman_utils module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.datman_utils.delete"><code class="docutils literal notranslate"><span class="pre">delete()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.datman_utils.delete_bids"><code class="docutils literal notranslate"><span class="pre">delete_bids()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.datman_utils.delete_scan"><code class="docutils literal notranslate"><span class="pre">delete_scan()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.datman_utils.delete_session"><code class="docutils literal notranslate"><span class="pre">delete_session()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.datman_utils.delete_timepoint"><code class="docutils literal notranslate"><span class="pre">delete_timepoint()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.datman_utils.get_manifests"><code class="docutils literal notranslate"><span class="pre">get_manifests()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.datman_utils.get_study_path"><code class="docutils literal notranslate"><span class="pre">get_study_path()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.datman_utils.read_json"><code class="docutils literal notranslate"><span class="pre">read_json()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.datman_utils.update_header_diffs"><code class="docutils literal notranslate"><span class="pre">update_header_diffs()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dashboard.html#module-dashboard.emails">dashboard.emails module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.emails.async_exec"><code class="docutils literal notranslate"><span class="pre">async_exec()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.emails.missing_redcap_email"><code class="docutils literal notranslate"><span class="pre">missing_redcap_email()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.emails.send_async_email"><code class="docutils literal notranslate"><span class="pre">send_async_email()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.emails.send_email"><code class="docutils literal notranslate"><span class="pre">send_email()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dashboard.html#module-dashboard.exceptions">dashboard.exceptions module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.exceptions.InvalidDataException"><code class="docutils literal notranslate"><span class="pre">InvalidDataException</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.exceptions.InvalidUsage"><code class="docutils literal notranslate"><span class="pre">InvalidUsage</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.html#dashboard.exceptions.InvalidUsage.status_code"><code class="docutils literal notranslate"><span class="pre">InvalidUsage.status_code</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.html#dashboard.exceptions.InvalidUsage.to_dict"><code class="docutils literal notranslate"><span class="pre">InvalidUsage.to_dict()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.exceptions.MonitorException"><code class="docutils literal notranslate"><span class="pre">MonitorException</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.exceptions.RedcapException"><code class="docutils literal notranslate"><span class="pre">RedcapException</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.exceptions.SchedulerException"><code class="docutils literal notranslate"><span class="pre">SchedulerException</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dashboard.html#module-dashboard.forms">dashboard.forms module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.forms.AnalysisForm"><code class="docutils literal notranslate"><span class="pre">AnalysisForm</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.html#dashboard.forms.AnalysisForm.description"><code class="docutils literal notranslate"><span class="pre">AnalysisForm.description</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.html#dashboard.forms.AnalysisForm.name"><code class="docutils literal notranslate"><span class="pre">AnalysisForm.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.html#dashboard.forms.AnalysisForm.software"><code class="docutils literal notranslate"><span class="pre">AnalysisForm.software</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.forms.SelectMetricsForm"><code class="docutils literal notranslate"><span class="pre">SelectMetricsForm</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.html#dashboard.forms.SelectMetricsForm.is_phantom"><code class="docutils literal notranslate"><span class="pre">SelectMetricsForm.is_phantom</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.html#dashboard.forms.SelectMetricsForm.metrictype_id"><code class="docutils literal notranslate"><span class="pre">SelectMetricsForm.metrictype_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.html#dashboard.forms.SelectMetricsForm.metrictype_vals"><code class="docutils literal notranslate"><span class="pre">SelectMetricsForm.metrictype_vals</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.html#dashboard.forms.SelectMetricsForm.query_complete"><code class="docutils literal notranslate"><span class="pre">SelectMetricsForm.query_complete</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.html#dashboard.forms.SelectMetricsForm.scan_id"><code class="docutils literal notranslate"><span class="pre">SelectMetricsForm.scan_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.html#dashboard.forms.SelectMetricsForm.scan_vals"><code class="docutils literal notranslate"><span class="pre">SelectMetricsForm.scan_vals</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.html#dashboard.forms.SelectMetricsForm.scantype_id"><code class="docutils literal notranslate"><span class="pre">SelectMetricsForm.scantype_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.html#dashboard.forms.SelectMetricsForm.scantype_vals"><code class="docutils literal notranslate"><span class="pre">SelectMetricsForm.scantype_vals</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.html#dashboard.forms.SelectMetricsForm.session_id"><code class="docutils literal notranslate"><span class="pre">SelectMetricsForm.session_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.html#dashboard.forms.SelectMetricsForm.session_vals"><code class="docutils literal notranslate"><span class="pre">SelectMetricsForm.session_vals</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.html#dashboard.forms.SelectMetricsForm.site_id"><code class="docutils literal notranslate"><span class="pre">SelectMetricsForm.site_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.html#dashboard.forms.SelectMetricsForm.site_vals"><code class="docutils literal notranslate"><span class="pre">SelectMetricsForm.site_vals</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.html#dashboard.forms.SelectMetricsForm.study_id"><code class="docutils literal notranslate"><span class="pre">SelectMetricsForm.study_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.html#dashboard.forms.SelectMetricsForm.study_vals"><code class="docutils literal notranslate"><span class="pre">SelectMetricsForm.study_vals</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.forms.StudyOverviewForm"><code class="docutils literal notranslate"><span class="pre">StudyOverviewForm</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.html#dashboard.forms.StudyOverviewForm.readme_txt"><code class="docutils literal notranslate"><span class="pre">StudyOverviewForm.readme_txt</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.html#dashboard.forms.StudyOverviewForm.study_id"><code class="docutils literal notranslate"><span class="pre">StudyOverviewForm.study_id</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dashboard.html#module-dashboard.monitors">dashboard.monitors module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.monitors.add_monitor"><code class="docutils literal notranslate"><span class="pre">add_monitor()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.monitors.check_redcap"><code class="docutils literal notranslate"><span class="pre">check_redcap()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.monitors.get_emails"><code class="docutils literal notranslate"><span class="pre">get_emails()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.monitors.monitor_redcap_import"><code class="docutils literal notranslate"><span class="pre">monitor_redcap_import()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dashboard.html#module-dashboard.queries">dashboard.queries module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.queries.find_scans"><code class="docutils literal notranslate"><span class="pre">find_scans()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.queries.find_sessions"><code class="docutils literal notranslate"><span class="pre">find_sessions()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.queries.find_subjects"><code class="docutils literal notranslate"><span class="pre">find_subjects()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.queries.get_redcap_config"><code class="docutils literal notranslate"><span class="pre">get_redcap_config()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.queries.get_scan"><code class="docutils literal notranslate"><span class="pre">get_scan()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.queries.get_scan_qc"><code class="docutils literal notranslate"><span class="pre">get_scan_qc()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.queries.get_scantypes"><code class="docutils literal notranslate"><span class="pre">get_scantypes()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.queries.get_session"><code class="docutils literal notranslate"><span class="pre">get_session()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.queries.get_studies"><code class="docutils literal notranslate"><span class="pre">get_studies()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.queries.get_study_timepoints"><code class="docutils literal notranslate"><span class="pre">get_study_timepoints()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.queries.get_timepoint"><code class="docutils literal notranslate"><span class="pre">get_timepoint()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.queries.get_user"><code class="docutils literal notranslate"><span class="pre">get_user()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.queries.query_metric_types"><code class="docutils literal notranslate"><span class="pre">query_metric_types()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.queries.query_metric_values_byid"><code class="docutils literal notranslate"><span class="pre">query_metric_values_byid()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.queries.query_metric_values_byname"><code class="docutils literal notranslate"><span class="pre">query_metric_values_byname()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dashboard.html#module-dashboard.task_scheduler">dashboard.task_scheduler module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.task_scheduler.ContextThreadExecutor"><code class="docutils literal notranslate"><span class="pre">ContextThreadExecutor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.task_scheduler.RemoteScheduler"><code class="docutils literal notranslate"><span class="pre">RemoteScheduler</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.html#dashboard.task_scheduler.RemoteScheduler.add_job"><code class="docutils literal notranslate"><span class="pre">RemoteScheduler.add_job()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.html#dashboard.task_scheduler.RemoteScheduler.init_app"><code class="docutils literal notranslate"><span class="pre">RemoteScheduler.init_app()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.html#dashboard.task_scheduler.RemoteScheduler.start"><code class="docutils literal notranslate"><span class="pre">RemoteScheduler.start()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.task_scheduler.context_run"><code class="docutils literal notranslate"><span class="pre">context_run()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.task_scheduler.disable_scheduler_csrf"><code class="docutils literal notranslate"><span class="pre">disable_scheduler_csrf()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.task_scheduler.format_job_function"><code class="docutils literal notranslate"><span class="pre">format_job_function()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dashboard.html#module-dashboard.utils">dashboard.utils module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.utils.dashboard_admin_required"><code class="docutils literal notranslate"><span class="pre">dashboard_admin_required()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.utils.get_scan"><code class="docutils literal notranslate"><span class="pre">get_scan()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.utils.get_session"><code class="docutils literal notranslate"><span class="pre">get_session()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.utils.get_timepoint"><code class="docutils literal notranslate"><span class="pre">get_timepoint()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.utils.is_safe_url"><code class="docutils literal notranslate"><span class="pre">is_safe_url()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.utils.prev_url"><code class="docutils literal notranslate"><span class="pre">prev_url()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.utils.read_bool"><code class="docutils literal notranslate"><span class="pre">read_bool()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.utils.report_form_errors"><code class="docutils literal notranslate"><span class="pre">report_form_errors()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html#dashboard.utils.study_admin_required"><code class="docutils literal notranslate"><span class="pre">study_admin_required()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dashboard.html#subpackages">Subpackages</a><ul>
@@ -144,11 +254,11 @@
       <div class="clearer"></div>
     </div>
     <div class="footer">
-      &copy;2020, TIGRLab.
+      &#169;2020, TIGRLab.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.1.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
       
       |
       <a href="../_sources/api/modules.rst.txt"

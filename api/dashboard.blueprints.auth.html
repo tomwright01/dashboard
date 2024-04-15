@@ -1,19 +1,16 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>dashboard.blueprints.auth package &#8212; QC Dashboard 0.0.1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=12dfc556" />
+    <script src="../_static/documentation_options.js?v=d45e8c67"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="dashboard.blueprints.handlers package" href="dashboard.blueprints.handlers.html" />
@@ -21,8 +18,9 @@
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
+
   
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+  
 
   </head><body>
   
@@ -35,91 +33,91 @@
           <div class="body" role="main">
             
   <section id="dashboard-blueprints-auth-package">
-<h1>dashboard.blueprints.auth package<a class="headerlink" href="#dashboard-blueprints-auth-package" title="Permalink to this heading">¶</a></h1>
+<h1>dashboard.blueprints.auth package<a class="headerlink" href="#dashboard-blueprints-auth-package" title="Link to this heading">¶</a></h1>
 <section id="module-dashboard.blueprints.auth">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-dashboard.blueprints.auth" title="Permalink to this heading">¶</a></h2>
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-dashboard.blueprints.auth" title="Link to this heading">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="dashboard.blueprints.auth.register_bp">
-<span class="sig-prename descclassname"><span class="pre">dashboard.blueprints.auth.</span></span><span class="sig-name descname"><span class="pre">register_bp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dashboard.blueprints.auth.register_bp" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">dashboard.blueprints.auth.</span></span><span class="sig-name descname"><span class="pre">register_bp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dashboard.blueprints.auth.register_bp" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </section>
 <section id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
 <section id="module-dashboard.blueprints.auth.oauth">
-<span id="dashboard-blueprints-auth-oauth-module"></span><h3>dashboard.blueprints.auth.oauth module<a class="headerlink" href="#module-dashboard.blueprints.auth.oauth" title="Permalink to this heading">¶</a></h3>
+<span id="dashboard-blueprints-auth-oauth-module"></span><h3>dashboard.blueprints.auth.oauth module<a class="headerlink" href="#module-dashboard.blueprints.auth.oauth" title="Link to this heading">¶</a></h3>
 <p>This allows users to be validated using the OAuth protocol</p>
 <p>See <a class="reference external" href="https://blog.miguelgrinberg.com/post/oauth-authentication-with-flask">https://blog.miguelgrinberg.com/post/oauth-authentication-with-flask</a> for
 an overview.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="dashboard.blueprints.auth.oauth.GithubSignIn">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dashboard.blueprints.auth.oauth.</span></span><span class="sig-name descname"><span class="pre">GithubSignIn</span></span><a class="headerlink" href="#dashboard.blueprints.auth.oauth.GithubSignIn" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dashboard.blueprints.auth.oauth.</span></span><span class="sig-name descname"><span class="pre">GithubSignIn</span></span><a class="headerlink" href="#dashboard.blueprints.auth.oauth.GithubSignIn" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#dashboard.blueprints.auth.oauth.OAuthSignIn" title="dashboard.blueprints.auth.oauth.OAuthSignIn"><code class="xref py py-class docutils literal notranslate"><span class="pre">OAuthSignIn</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="dashboard.blueprints.auth.oauth.GithubSignIn.authorize">
-<span class="sig-name descname"><span class="pre">authorize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dashboard.blueprints.auth.oauth.GithubSignIn.authorize" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">authorize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dashboard.blueprints.auth.oauth.GithubSignIn.authorize" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="dashboard.blueprints.auth.oauth.GithubSignIn.callback">
-<span class="sig-name descname"><span class="pre">callback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dashboard.blueprints.auth.oauth.GithubSignIn.callback" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">callback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dashboard.blueprints.auth.oauth.GithubSignIn.callback" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="dashboard.blueprints.auth.oauth.GitlabSignIn">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dashboard.blueprints.auth.oauth.</span></span><span class="sig-name descname"><span class="pre">GitlabSignIn</span></span><a class="headerlink" href="#dashboard.blueprints.auth.oauth.GitlabSignIn" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dashboard.blueprints.auth.oauth.</span></span><span class="sig-name descname"><span class="pre">GitlabSignIn</span></span><a class="headerlink" href="#dashboard.blueprints.auth.oauth.GitlabSignIn" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#dashboard.blueprints.auth.oauth.OAuthSignIn" title="dashboard.blueprints.auth.oauth.OAuthSignIn"><code class="xref py py-class docutils literal notranslate"><span class="pre">OAuthSignIn</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="dashboard.blueprints.auth.oauth.GitlabSignIn.authorize">
-<span class="sig-name descname"><span class="pre">authorize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dashboard.blueprints.auth.oauth.GitlabSignIn.authorize" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">authorize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dashboard.blueprints.auth.oauth.GitlabSignIn.authorize" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="dashboard.blueprints.auth.oauth.GitlabSignIn.callback">
-<span class="sig-name descname"><span class="pre">callback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dashboard.blueprints.auth.oauth.GitlabSignIn.callback" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">callback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dashboard.blueprints.auth.oauth.GitlabSignIn.callback" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="dashboard.blueprints.auth.oauth.GitlabSignIn.str_rnd">
-<span class="sig-name descname"><span class="pre">str_rnd</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#dashboard.blueprints.auth.oauth.GitlabSignIn.str_rnd" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">str_rnd</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#dashboard.blueprints.auth.oauth.GitlabSignIn.str_rnd" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="dashboard.blueprints.auth.oauth.OAuthSignIn">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dashboard.blueprints.auth.oauth.</span></span><span class="sig-name descname"><span class="pre">OAuthSignIn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">provider_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dashboard.blueprints.auth.oauth.OAuthSignIn" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dashboard.blueprints.auth.oauth.</span></span><span class="sig-name descname"><span class="pre">OAuthSignIn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">provider_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dashboard.blueprints.auth.oauth.OAuthSignIn" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="dashboard.blueprints.auth.oauth.OAuthSignIn.authorize">
-<span class="sig-name descname"><span class="pre">authorize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dashboard.blueprints.auth.oauth.OAuthSignIn.authorize" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">authorize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dashboard.blueprints.auth.oauth.OAuthSignIn.authorize" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="dashboard.blueprints.auth.oauth.OAuthSignIn.callback">
-<span class="sig-name descname"><span class="pre">callback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dashboard.blueprints.auth.oauth.OAuthSignIn.callback" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">callback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dashboard.blueprints.auth.oauth.OAuthSignIn.callback" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="dashboard.blueprints.auth.oauth.OAuthSignIn.get_callback_url">
-<span class="sig-name descname"><span class="pre">get_callback_url</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dashboard.blueprints.auth.oauth.OAuthSignIn.get_callback_url" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_callback_url</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dashboard.blueprints.auth.oauth.OAuthSignIn.get_callback_url" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="dashboard.blueprints.auth.oauth.OAuthSignIn.get_provider">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_provider</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">provider_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dashboard.blueprints.auth.oauth.OAuthSignIn.get_provider" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_provider</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">provider_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dashboard.blueprints.auth.oauth.OAuthSignIn.get_provider" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="dashboard.blueprints.auth.oauth.OAuthSignIn.providers">
-<span class="sig-name descname"><span class="pre">providers</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#dashboard.blueprints.auth.oauth.OAuthSignIn.providers" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">providers</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#dashboard.blueprints.auth.oauth.OAuthSignIn.providers" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="dashboard.blueprints.auth.oauth.OAuthSignIn.random_string">
-<span class="sig-name descname"><span class="pre">random_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chars</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dashboard.blueprints.auth.oauth.OAuthSignIn.random_string" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">random_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chars</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dashboard.blueprints.auth.oauth.OAuthSignIn.random_string" title="Link to this definition">¶</a></dt>
 <dd><p>Generates a random string</p>
 </dd></dl>
 
@@ -127,15 +125,15 @@ an overview.</p>
 
 </section>
 <section id="module-dashboard.blueprints.auth.views">
-<span id="dashboard-blueprints-auth-views-module"></span><h3>dashboard.blueprints.auth.views module<a class="headerlink" href="#module-dashboard.blueprints.auth.views" title="Permalink to this heading">¶</a></h3>
+<span id="dashboard-blueprints-auth-views-module"></span><h3>dashboard.blueprints.auth.views module<a class="headerlink" href="#module-dashboard.blueprints.auth.views" title="Link to this heading">¶</a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dashboard.blueprints.auth.views.oauth_authorize">
-<span class="sig-prename descclassname"><span class="pre">dashboard.blueprints.auth.views.</span></span><span class="sig-name descname"><span class="pre">oauth_authorize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">provider</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dashboard.blueprints.auth.views.oauth_authorize" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">dashboard.blueprints.auth.views.</span></span><span class="sig-name descname"><span class="pre">oauth_authorize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">provider</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dashboard.blueprints.auth.views.oauth_authorize" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="dashboard.blueprints.auth.views.oauth_callback">
-<span class="sig-prename descclassname"><span class="pre">dashboard.blueprints.auth.views.</span></span><span class="sig-name descname"><span class="pre">oauth_callback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">provider</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dashboard.blueprints.auth.views.oauth_callback" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">dashboard.blueprints.auth.views.</span></span><span class="sig-name descname"><span class="pre">oauth_callback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">provider</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dashboard.blueprints.auth.views.oauth_callback" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </section>
@@ -211,11 +209,11 @@ an overview.</p>
       <div class="clearer"></div>
     </div>
     <div class="footer">
-      &copy;2020, TIGRLab.
+      &#169;2020, TIGRLab.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.1.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
       
       |
       <a href="../_sources/api/dashboard.blueprints.auth.rst.txt"

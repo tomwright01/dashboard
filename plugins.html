@@ -1,19 +1,16 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="./">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Plugins &#8212; QC Dashboard 0.0.1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=12dfc556" />
+    <script src="_static/documentation_options.js?v=d45e8c67"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Developer Resources" href="developer.html" />
@@ -21,8 +18,9 @@
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
+
   
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+  
 
   </head><body>
   
@@ -35,9 +33,9 @@
           <div class="body" role="main">
             
   <section id="plugins">
-<h1>Plugins<a class="headerlink" href="#plugins" title="Permalink to this heading">¶</a></h1>
+<h1>Plugins<a class="headerlink" href="#plugins" title="Link to this heading">¶</a></h1>
 <section id="installing-plugins">
-<h2>Installing Plugins<a class="headerlink" href="#installing-plugins" title="Permalink to this heading">¶</a></h2>
+<h2>Installing Plugins<a class="headerlink" href="#installing-plugins" title="Link to this heading">¶</a></h2>
 <p>The dashboard’s functionality can easily be extended with blueprints. Copy
 the blueprint you want to add into <code class="docutils literal notranslate"><span class="pre">`datman-dashboard/dashboard/blueprints</span></code>
 and restart uwsgi to complete installation. The blueprint itself should document
@@ -45,7 +43,7 @@ any new environment variables to set, python packages to install, or databases
 to create.</p>
 </section>
 <section id="creating-a-plugin">
-<h2>Creating a Plugin<a class="headerlink" href="#creating-a-plugin" title="Permalink to this heading">¶</a></h2>
+<h2>Creating a Plugin<a class="headerlink" href="#creating-a-plugin" title="Link to this heading">¶</a></h2>
 <p>To create your own blueprint you should do the following:</p>
 <ol class="arabic simple">
 <li><p>Define a <a class="reference external" href="https://flask.palletsprojects.com/en/2.1.x/blueprints/">flask blueprint</a></p></li>
@@ -120,11 +118,11 @@ alternate databases to the <code class="docutils literal notranslate"><span clas
       <div class="clearer"></div>
     </div>
     <div class="footer">
-      &copy;2020, TIGRLab.
+      &#169;2020, TIGRLab.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.1.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
       
       |
       <a href="_sources/plugins.rst.txt"

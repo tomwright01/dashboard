@@ -305,14 +305,15 @@ Optional
 * **FLASK_ENV**
 
   * Description: Tells Flask what type of environment it is running within.
-    `See here for more info <https://flask.palletsprojects.com/en/1.1.x/config/#ENV>`_
+    Switching to 'development' mode can enable extensions to help with testing
+    and development. Do not use 'development' mode on a production server.
   * Accepted values: ``'production'`` or ``'development'``
   * Default value: ``'production'``
 * **FLASK_DEBUG**
 
   * Description: Tells Flask and its plugins to run in debug mode. Setting
     'FLASK_ENV' to development mode automatically turns on FLASK_DEBUG.
-    `See here for more info <https://flask.palletsprojects.com/en/1.1.x/config/#DEBUG>`_
+    `See here for more info <https://flask.palletsprojects.com/en/3.0.x/config/#DEBUG>`_
   * Accepted values: ``True`` (if it should run in debug mode) or ``False``
   * Default value: ``False``
 * **LOGIN_DISABLED**

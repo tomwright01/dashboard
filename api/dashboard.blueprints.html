@@ -1,19 +1,16 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Blueprints &#8212; QC Dashboard 0.0.1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=12dfc556" />
+    <script src="../_static/documentation_options.js?v=d45e8c67"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="dashboard.blueprints.auth package" href="dashboard.blueprints.auth.html" />
@@ -21,8 +18,9 @@
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
+
   
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+  
 
   </head><body>
   
@@ -35,77 +33,304 @@
           <div class="body" role="main">
             
   <section id="blueprints">
-<h1>Blueprints<a class="headerlink" href="#blueprints" title="Permalink to this heading">¶</a></h1>
+<h1>Blueprints<a class="headerlink" href="#blueprints" title="Link to this heading">¶</a></h1>
 <section id="module-dashboard.blueprints">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-dashboard.blueprints" title="Permalink to this heading">¶</a></h2>
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-dashboard.blueprints" title="Link to this heading">¶</a></h2>
 </section>
 <section id="subpackages">
-<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading">¶</a></h2>
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="dashboard.blueprints.auth.html">dashboard.blueprints.auth package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="dashboard.blueprints.auth.html#module-dashboard.blueprints.auth">Module contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dashboard.blueprints.auth.html#module-dashboard.blueprints.auth">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.blueprints.auth.html#dashboard.blueprints.auth.register_bp"><code class="docutils literal notranslate"><span class="pre">register_bp()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="dashboard.blueprints.auth.html#submodules">Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="dashboard.blueprints.auth.html#module-dashboard.blueprints.auth.oauth">dashboard.blueprints.auth.oauth module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="dashboard.blueprints.auth.html#module-dashboard.blueprints.auth.views">dashboard.blueprints.auth.views module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.blueprints.auth.html#module-dashboard.blueprints.auth.oauth">dashboard.blueprints.auth.oauth module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.auth.html#dashboard.blueprints.auth.oauth.GithubSignIn"><code class="docutils literal notranslate"><span class="pre">GithubSignIn</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.auth.html#dashboard.blueprints.auth.oauth.GithubSignIn.authorize"><code class="docutils literal notranslate"><span class="pre">GithubSignIn.authorize()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.auth.html#dashboard.blueprints.auth.oauth.GithubSignIn.callback"><code class="docutils literal notranslate"><span class="pre">GithubSignIn.callback()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.auth.html#dashboard.blueprints.auth.oauth.GitlabSignIn"><code class="docutils literal notranslate"><span class="pre">GitlabSignIn</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.auth.html#dashboard.blueprints.auth.oauth.GitlabSignIn.authorize"><code class="docutils literal notranslate"><span class="pre">GitlabSignIn.authorize()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.auth.html#dashboard.blueprints.auth.oauth.GitlabSignIn.callback"><code class="docutils literal notranslate"><span class="pre">GitlabSignIn.callback()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.auth.html#dashboard.blueprints.auth.oauth.GitlabSignIn.str_rnd"><code class="docutils literal notranslate"><span class="pre">GitlabSignIn.str_rnd</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.auth.html#dashboard.blueprints.auth.oauth.OAuthSignIn"><code class="docutils literal notranslate"><span class="pre">OAuthSignIn</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.auth.html#dashboard.blueprints.auth.oauth.OAuthSignIn.authorize"><code class="docutils literal notranslate"><span class="pre">OAuthSignIn.authorize()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.auth.html#dashboard.blueprints.auth.oauth.OAuthSignIn.callback"><code class="docutils literal notranslate"><span class="pre">OAuthSignIn.callback()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.auth.html#dashboard.blueprints.auth.oauth.OAuthSignIn.get_callback_url"><code class="docutils literal notranslate"><span class="pre">OAuthSignIn.get_callback_url()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.auth.html#dashboard.blueprints.auth.oauth.OAuthSignIn.get_provider"><code class="docutils literal notranslate"><span class="pre">OAuthSignIn.get_provider()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.auth.html#dashboard.blueprints.auth.oauth.OAuthSignIn.providers"><code class="docutils literal notranslate"><span class="pre">OAuthSignIn.providers</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.auth.html#dashboard.blueprints.auth.oauth.OAuthSignIn.random_string"><code class="docutils literal notranslate"><span class="pre">OAuthSignIn.random_string()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.blueprints.auth.html#module-dashboard.blueprints.auth.views">dashboard.blueprints.auth.views module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.auth.html#dashboard.blueprints.auth.views.oauth_authorize"><code class="docutils literal notranslate"><span class="pre">oauth_authorize()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.auth.html#dashboard.blueprints.auth.views.oauth_callback"><code class="docutils literal notranslate"><span class="pre">oauth_callback()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dashboard.blueprints.handlers.html">dashboard.blueprints.handlers package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="dashboard.blueprints.handlers.html#module-dashboard.blueprints.handlers">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.blueprints.handlers.html#dashboard.blueprints.handlers.register_bp"><code class="docutils literal notranslate"><span class="pre">register_bp()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="dashboard.blueprints.handlers.html#submodules">Submodules</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="dashboard.blueprints.handlers.html#module-dashboard.blueprints.handlers.views">dashboard.blueprints.handlers.views module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dashboard.blueprints.handlers.html#module-dashboard.blueprints.handlers.views">dashboard.blueprints.handlers.views module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.blueprints.handlers.html#dashboard.blueprints.handlers.views.handle_invalid_usage"><code class="docutils literal notranslate"><span class="pre">handle_invalid_usage()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.blueprints.handlers.html#dashboard.blueprints.handlers.views.internal_error"><code class="docutils literal notranslate"><span class="pre">internal_error()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.blueprints.handlers.html#dashboard.blueprints.handlers.views.not_found_error"><code class="docutils literal notranslate"><span class="pre">not_found_error()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dashboard.blueprints.main.html">dashboard.blueprints.main package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="dashboard.blueprints.main.html#module-dashboard.blueprints.main">Module contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dashboard.blueprints.main.html#module-dashboard.blueprints.main">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.blueprints.main.html#dashboard.blueprints.main.register_bp"><code class="docutils literal notranslate"><span class="pre">register_bp()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="dashboard.blueprints.main.html#submodules">Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="dashboard.blueprints.main.html#module-dashboard.blueprints.main.views">dashboard.blueprints.main.views module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.blueprints.main.html#module-dashboard.blueprints.main.views">dashboard.blueprints.main.views module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.main.html#dashboard.blueprints.main.views.analysis"><code class="docutils literal notranslate"><span class="pre">analysis()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.main.html#dashboard.blueprints.main.views.downloadCSV"><code class="docutils literal notranslate"><span class="pre">downloadCSV()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.main.html#dashboard.blueprints.main.views.index"><code class="docutils literal notranslate"><span class="pre">index()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.main.html#dashboard.blueprints.main.views.metricData"><code class="docutils literal notranslate"><span class="pre">metricData()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.main.html#dashboard.blueprints.main.views.metricDataAsJson"><code class="docutils literal notranslate"><span class="pre">metricDataAsJson()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.main.html#dashboard.blueprints.main.views.search_data"><code class="docutils literal notranslate"><span class="pre">search_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.main.html#dashboard.blueprints.main.views.study"><code class="docutils literal notranslate"><span class="pre">study()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dashboard.blueprints.redcap.html">dashboard.blueprints.redcap package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="dashboard.blueprints.redcap.html#module-dashboard.blueprints.redcap">Module contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dashboard.blueprints.redcap.html#module-dashboard.blueprints.redcap">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.blueprints.redcap.html#dashboard.blueprints.redcap.register_bp"><code class="docutils literal notranslate"><span class="pre">register_bp()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="dashboard.blueprints.redcap.html#submodules">Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="dashboard.blueprints.redcap.html#module-dashboard.blueprints.redcap.emails">dashboard.blueprints.redcap.emails module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="dashboard.blueprints.redcap.html#module-dashboard.blueprints.redcap.monitors">dashboard.blueprints.redcap.monitors module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="dashboard.blueprints.redcap.html#module-dashboard.blueprints.redcap.utils">dashboard.blueprints.redcap.utils module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="dashboard.blueprints.redcap.html#module-dashboard.blueprints.redcap.views">dashboard.blueprints.redcap.views module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.blueprints.redcap.html#module-dashboard.blueprints.redcap.emails">dashboard.blueprints.redcap.emails module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.redcap.html#dashboard.blueprints.redcap.emails.missing_session_data"><code class="docutils literal notranslate"><span class="pre">missing_session_data()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.blueprints.redcap.html#module-dashboard.blueprints.redcap.monitors">dashboard.blueprints.redcap.monitors module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.redcap.html#dashboard.blueprints.redcap.monitors.check_scans"><code class="docutils literal notranslate"><span class="pre">check_scans()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.redcap.html#dashboard.blueprints.redcap.monitors.download_session"><code class="docutils literal notranslate"><span class="pre">download_session()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.redcap.html#dashboard.blueprints.redcap.monitors.monitor_scan_download"><code class="docutils literal notranslate"><span class="pre">monitor_scan_download()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.redcap.html#dashboard.blueprints.redcap.monitors.monitor_scan_import"><code class="docutils literal notranslate"><span class="pre">monitor_scan_import()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.blueprints.redcap.html#module-dashboard.blueprints.redcap.utils">dashboard.blueprints.redcap.utils module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.redcap.html#dashboard.blueprints.redcap.utils.create_from_request"><code class="docutils literal notranslate"><span class="pre">create_from_request()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.redcap.html#dashboard.blueprints.redcap.utils.find_study"><code class="docutils literal notranslate"><span class="pre">find_study()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.redcap.html#dashboard.blueprints.redcap.utils.get_redcap_record"><code class="docutils literal notranslate"><span class="pre">get_redcap_record()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.redcap.html#dashboard.blueprints.redcap.utils.get_timepoint"><code class="docutils literal notranslate"><span class="pre">get_timepoint()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.redcap.html#dashboard.blueprints.redcap.utils.set_session"><code class="docutils literal notranslate"><span class="pre">set_session()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.blueprints.redcap.html#module-dashboard.blueprints.redcap.views">dashboard.blueprints.redcap.views module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.redcap.html#dashboard.blueprints.redcap.views.redcap"><code class="docutils literal notranslate"><span class="pre">redcap()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.redcap.html#dashboard.blueprints.redcap.views.redcap_redirect"><code class="docutils literal notranslate"><span class="pre">redcap_redirect()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dashboard.blueprints.scans.html">dashboard.blueprints.scans package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="dashboard.blueprints.scans.html#submodules">Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="dashboard.blueprints.scans.html#module-dashboard.blueprints.scans.forms">dashboard.blueprints.scans.forms module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="dashboard.blueprints.scans.html#module-dashboard.blueprints.scans.utils">dashboard.blueprints.scans.utils module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="dashboard.blueprints.scans.html#module-dashboard.blueprints.scans.views">dashboard.blueprints.scans.views module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.blueprints.scans.html#module-dashboard.blueprints.scans.forms">dashboard.blueprints.scans.forms module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.scans.html#dashboard.blueprints.scans.forms.ScanChecklistForm"><code class="docutils literal notranslate"><span class="pre">ScanChecklistForm</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.scans.html#dashboard.blueprints.scans.forms.ScanChecklistForm.comment"><code class="docutils literal notranslate"><span class="pre">ScanChecklistForm.comment</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.scans.html#dashboard.blueprints.scans.forms.ScanChecklistForm.submit"><code class="docutils literal notranslate"><span class="pre">ScanChecklistForm.submit</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="dashboard.blueprints.scans.html#module-dashboard.blueprints.scans">Module contents</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.scans.html#dashboard.blueprints.scans.forms.SliceTimingForm"><code class="docutils literal notranslate"><span class="pre">SliceTimingForm</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.scans.html#dashboard.blueprints.scans.forms.SliceTimingForm.submit"><code class="docutils literal notranslate"><span class="pre">SliceTimingForm.submit</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.scans.html#dashboard.blueprints.scans.forms.SliceTimingForm.timings"><code class="docutils literal notranslate"><span class="pre">SliceTimingForm.timings</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.blueprints.scans.html#module-dashboard.blueprints.scans.utils">dashboard.blueprints.scans.utils module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.scans.html#dashboard.blueprints.scans.utils.get_nifti_path"><code class="docutils literal notranslate"><span class="pre">get_nifti_path()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.scans.html#dashboard.blueprints.scans.utils.update_json"><code class="docutils literal notranslate"><span class="pre">update_json()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.blueprints.scans.html#module-dashboard.blueprints.scans.views">dashboard.blueprints.scans.views module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.scans.html#dashboard.blueprints.scans.views.fix_slice_timing"><code class="docutils literal notranslate"><span class="pre">fix_slice_timing()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.scans.html#dashboard.blueprints.scans.views.load_scan"><code class="docutils literal notranslate"><span class="pre">load_scan()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.scans.html#dashboard.blueprints.scans.views.papaya"><code class="docutils literal notranslate"><span class="pre">papaya()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.scans.html#dashboard.blueprints.scans.views.scan"><code class="docutils literal notranslate"><span class="pre">scan()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.scans.html#dashboard.blueprints.scans.views.scan_review"><code class="docutils literal notranslate"><span class="pre">scan_review()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dashboard.blueprints.scans.html#module-dashboard.blueprints.scans">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.blueprints.scans.html#dashboard.blueprints.scans.register_bp"><code class="docutils literal notranslate"><span class="pre">register_bp()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dashboard.blueprints.timepoints.html">dashboard.blueprints.timepoints package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="dashboard.blueprints.timepoints.html#module-dashboard.blueprints.timepoints">Module contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dashboard.blueprints.timepoints.html#module-dashboard.blueprints.timepoints">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.blueprints.timepoints.html#dashboard.blueprints.timepoints.register_bp"><code class="docutils literal notranslate"><span class="pre">register_bp()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="dashboard.blueprints.timepoints.html#submodules">Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="dashboard.blueprints.timepoints.html#module-dashboard.blueprints.timepoints.emails">dashboard.blueprints.timepoints.emails module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="dashboard.blueprints.timepoints.html#module-dashboard.blueprints.timepoints.forms">dashboard.blueprints.timepoints.forms module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="dashboard.blueprints.timepoints.html#module-dashboard.blueprints.timepoints.utils">dashboard.blueprints.timepoints.utils module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="dashboard.blueprints.timepoints.html#module-dashboard.blueprints.timepoints.views">dashboard.blueprints.timepoints.views module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.blueprints.timepoints.html#module-dashboard.blueprints.timepoints.emails">dashboard.blueprints.timepoints.emails module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.timepoints.html#dashboard.blueprints.timepoints.emails.incidental_finding_email"><code class="docutils literal notranslate"><span class="pre">incidental_finding_email()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.blueprints.timepoints.html#module-dashboard.blueprints.timepoints.forms">dashboard.blueprints.timepoints.forms module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.timepoints.html#dashboard.blueprints.timepoints.forms.DataDeletionForm"><code class="docutils literal notranslate"><span class="pre">DataDeletionForm</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.timepoints.html#dashboard.blueprints.timepoints.forms.DataDeletionForm.database_records"><code class="docutils literal notranslate"><span class="pre">DataDeletionForm.database_records</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.timepoints.html#dashboard.blueprints.timepoints.forms.DataDeletionForm.raw_data"><code class="docutils literal notranslate"><span class="pre">DataDeletionForm.raw_data</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.timepoints.html#dashboard.blueprints.timepoints.forms.EmptySessionForm"><code class="docutils literal notranslate"><span class="pre">EmptySessionForm</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.timepoints.html#dashboard.blueprints.timepoints.forms.EmptySessionForm.comment"><code class="docutils literal notranslate"><span class="pre">EmptySessionForm.comment</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.timepoints.html#dashboard.blueprints.timepoints.forms.IncidentalFindingsForm"><code class="docutils literal notranslate"><span class="pre">IncidentalFindingsForm</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.timepoints.html#dashboard.blueprints.timepoints.forms.IncidentalFindingsForm.comment"><code class="docutils literal notranslate"><span class="pre">IncidentalFindingsForm.comment</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.timepoints.html#dashboard.blueprints.timepoints.forms.IncidentalFindingsForm.submit"><code class="docutils literal notranslate"><span class="pre">IncidentalFindingsForm.submit</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.timepoints.html#dashboard.blueprints.timepoints.forms.NewIssueForm"><code class="docutils literal notranslate"><span class="pre">NewIssueForm</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.timepoints.html#dashboard.blueprints.timepoints.forms.NewIssueForm.body"><code class="docutils literal notranslate"><span class="pre">NewIssueForm.body</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.timepoints.html#dashboard.blueprints.timepoints.forms.NewIssueForm.submit"><code class="docutils literal notranslate"><span class="pre">NewIssueForm.submit</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.timepoints.html#dashboard.blueprints.timepoints.forms.NewIssueForm.title"><code class="docutils literal notranslate"><span class="pre">NewIssueForm.title</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.timepoints.html#dashboard.blueprints.timepoints.forms.ScanChecklistForm"><code class="docutils literal notranslate"><span class="pre">ScanChecklistForm</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.timepoints.html#dashboard.blueprints.timepoints.forms.ScanChecklistForm.comment"><code class="docutils literal notranslate"><span class="pre">ScanChecklistForm.comment</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.timepoints.html#dashboard.blueprints.timepoints.forms.ScanChecklistForm.submit"><code class="docutils literal notranslate"><span class="pre">ScanChecklistForm.submit</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.timepoints.html#dashboard.blueprints.timepoints.forms.TimepointCommentsForm"><code class="docutils literal notranslate"><span class="pre">TimepointCommentsForm</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.timepoints.html#dashboard.blueprints.timepoints.forms.TimepointCommentsForm.comment"><code class="docutils literal notranslate"><span class="pre">TimepointCommentsForm.comment</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.timepoints.html#dashboard.blueprints.timepoints.forms.TimepointCommentsForm.submit"><code class="docutils literal notranslate"><span class="pre">TimepointCommentsForm.submit</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.blueprints.timepoints.html#module-dashboard.blueprints.timepoints.utils">dashboard.blueprints.timepoints.utils module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.timepoints.html#dashboard.blueprints.timepoints.utils.clean_issue_title"><code class="docutils literal notranslate"><span class="pre">clean_issue_title()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.timepoints.html#dashboard.blueprints.timepoints.utils.get_issues_repo"><code class="docutils literal notranslate"><span class="pre">get_issues_repo()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.timepoints.html#dashboard.blueprints.timepoints.utils.handle_issue"><code class="docutils literal notranslate"><span class="pre">handle_issue()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.timepoints.html#dashboard.blueprints.timepoints.utils.make_issue"><code class="docutils literal notranslate"><span class="pre">make_issue()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.timepoints.html#dashboard.blueprints.timepoints.utils.search_issues"><code class="docutils literal notranslate"><span class="pre">search_issues()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.blueprints.timepoints.html#module-dashboard.blueprints.timepoints.views">dashboard.blueprints.timepoints.views module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.timepoints.html#dashboard.blueprints.timepoints.views.add_comment"><code class="docutils literal notranslate"><span class="pre">add_comment()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.timepoints.html#dashboard.blueprints.timepoints.views.create_issue"><code class="docutils literal notranslate"><span class="pre">create_issue()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.timepoints.html#dashboard.blueprints.timepoints.views.delete_comment"><code class="docutils literal notranslate"><span class="pre">delete_comment()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.timepoints.html#dashboard.blueprints.timepoints.views.delete_scan"><code class="docutils literal notranslate"><span class="pre">delete_scan()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.timepoints.html#dashboard.blueprints.timepoints.views.delete_session"><code class="docutils literal notranslate"><span class="pre">delete_session()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.timepoints.html#dashboard.blueprints.timepoints.views.delete_timepoint"><code class="docutils literal notranslate"><span class="pre">delete_timepoint()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.timepoints.html#dashboard.blueprints.timepoints.views.dismiss_missing"><code class="docutils literal notranslate"><span class="pre">dismiss_missing()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.timepoints.html#dashboard.blueprints.timepoints.views.dismiss_redcap"><code class="docutils literal notranslate"><span class="pre">dismiss_redcap()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.timepoints.html#dashboard.blueprints.timepoints.views.flag_finding"><code class="docutils literal notranslate"><span class="pre">flag_finding()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.timepoints.html#dashboard.blueprints.timepoints.views.qc_files"><code class="docutils literal notranslate"><span class="pre">qc_files()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.timepoints.html#dashboard.blueprints.timepoints.views.review_scan"><code class="docutils literal notranslate"><span class="pre">review_scan()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.timepoints.html#dashboard.blueprints.timepoints.views.sign_off"><code class="docutils literal notranslate"><span class="pre">sign_off()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.timepoints.html#dashboard.blueprints.timepoints.views.tech_notes"><code class="docutils literal notranslate"><span class="pre">tech_notes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.timepoints.html#dashboard.blueprints.timepoints.views.timepoint"><code class="docutils literal notranslate"><span class="pre">timepoint()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dashboard.blueprints.users.html">dashboard.blueprints.users package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="dashboard.blueprints.users.html#module-dashboard.blueprints.users">Module contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dashboard.blueprints.users.html#module-dashboard.blueprints.users">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.register_bp"><code class="docutils literal notranslate"><span class="pre">register_bp()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="dashboard.blueprints.users.html#submodules">Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="dashboard.blueprints.users.html#module-dashboard.blueprints.users.forms">dashboard.blueprints.users.forms module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="dashboard.blueprints.users.html#module-dashboard.blueprints.users.utils">dashboard.blueprints.users.utils module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="dashboard.blueprints.users.html#module-dashboard.blueprints.users.views">dashboard.blueprints.users.views module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.blueprints.users.html#module-dashboard.blueprints.users.forms">dashboard.blueprints.users.forms module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.forms.AccessRequestForm"><code class="docutils literal notranslate"><span class="pre">AccessRequestForm</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.forms.AccessRequestForm.request_access"><code class="docutils literal notranslate"><span class="pre">AccessRequestForm.request_access</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.forms.AccessRequestForm.send_request"><code class="docutils literal notranslate"><span class="pre">AccessRequestForm.send_request</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.forms.AccessRequestForm.studies"><code class="docutils literal notranslate"><span class="pre">AccessRequestForm.studies</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.forms.PermissionRadioField"><code class="docutils literal notranslate"><span class="pre">PermissionRadioField</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.forms.PermissionRadioField.populate_obj"><code class="docutils literal notranslate"><span class="pre">PermissionRadioField.populate_obj()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.forms.StudyPermissionsForm"><code class="docutils literal notranslate"><span class="pre">StudyPermissionsForm</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.forms.StudyPermissionsForm.does_qc"><code class="docutils literal notranslate"><span class="pre">StudyPermissionsForm.does_qc</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.forms.StudyPermissionsForm.is_admin"><code class="docutils literal notranslate"><span class="pre">StudyPermissionsForm.is_admin</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.forms.StudyPermissionsForm.kimel_contact"><code class="docutils literal notranslate"><span class="pre">StudyPermissionsForm.kimel_contact</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.forms.StudyPermissionsForm.primary_contact"><code class="docutils literal notranslate"><span class="pre">StudyPermissionsForm.primary_contact</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.forms.StudyPermissionsForm.revoke_access"><code class="docutils literal notranslate"><span class="pre">StudyPermissionsForm.revoke_access</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.forms.StudyPermissionsForm.site_id"><code class="docutils literal notranslate"><span class="pre">StudyPermissionsForm.site_id</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.forms.StudyPermissionsForm.study_RA"><code class="docutils literal notranslate"><span class="pre">StudyPermissionsForm.study_RA</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.forms.StudyPermissionsForm.study_id"><code class="docutils literal notranslate"><span class="pre">StudyPermissionsForm.study_id</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.forms.StudyPermissionsForm.user_id"><code class="docutils literal notranslate"><span class="pre">StudyPermissionsForm.user_id</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.forms.UserAdminForm"><code class="docutils literal notranslate"><span class="pre">UserAdminForm</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.forms.UserAdminForm.add_access"><code class="docutils literal notranslate"><span class="pre">UserAdminForm.add_access</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.forms.UserAdminForm.dashboard_admin"><code class="docutils literal notranslate"><span class="pre">UserAdminForm.dashboard_admin</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.forms.UserAdminForm.is_active"><code class="docutils literal notranslate"><span class="pre">UserAdminForm.is_active</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.forms.UserAdminForm.populate_obj"><code class="docutils literal notranslate"><span class="pre">UserAdminForm.populate_obj()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.forms.UserAdminForm.process"><code class="docutils literal notranslate"><span class="pre">UserAdminForm.process()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.forms.UserAdminForm.revoke_all_access"><code class="docutils literal notranslate"><span class="pre">UserAdminForm.revoke_all_access</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.forms.UserAdminForm.studies"><code class="docutils literal notranslate"><span class="pre">UserAdminForm.studies</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.forms.UserAdminForm.update_access"><code class="docutils literal notranslate"><span class="pre">UserAdminForm.update_access</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.forms.UserForm"><code class="docutils literal notranslate"><span class="pre">UserForm</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.forms.UserForm.account"><code class="docutils literal notranslate"><span class="pre">UserForm.account</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.forms.UserForm.alt_ext"><code class="docutils literal notranslate"><span class="pre">UserForm.alt_ext</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.forms.UserForm.alt_phone"><code class="docutils literal notranslate"><span class="pre">UserForm.alt_phone</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.forms.UserForm.email"><code class="docutils literal notranslate"><span class="pre">UserForm.email</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.forms.UserForm.ext"><code class="docutils literal notranslate"><span class="pre">UserForm.ext</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.forms.UserForm.first_name"><code class="docutils literal notranslate"><span class="pre">UserForm.first_name</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.forms.UserForm.id"><code class="docutils literal notranslate"><span class="pre">UserForm.id</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.forms.UserForm.institution"><code class="docutils literal notranslate"><span class="pre">UserForm.institution</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.forms.UserForm.last_name"><code class="docutils literal notranslate"><span class="pre">UserForm.last_name</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.forms.UserForm.phone"><code class="docutils literal notranslate"><span class="pre">UserForm.phone</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.forms.UserForm.position"><code class="docutils literal notranslate"><span class="pre">UserForm.position</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.forms.UserForm.provider"><code class="docutils literal notranslate"><span class="pre">UserForm.provider</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.forms.UserForm.submit"><code class="docutils literal notranslate"><span class="pre">UserForm.submit</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.blueprints.users.html#module-dashboard.blueprints.users.utils">dashboard.blueprints.users.utils module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.utils.get_admin_user_form"><code class="docutils literal notranslate"><span class="pre">get_admin_user_form()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.utils.get_user_form"><code class="docutils literal notranslate"><span class="pre">get_user_form()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.utils.parse_enabled_sites"><code class="docutils literal notranslate"><span class="pre">parse_enabled_sites()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.utils.populate_disabled_sites"><code class="docutils literal notranslate"><span class="pre">populate_disabled_sites()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.blueprints.users.html#module-dashboard.blueprints.users.views">dashboard.blueprints.users.views module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.views.before_request"><code class="docutils literal notranslate"><span class="pre">before_request()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.views.load_user"><code class="docutils literal notranslate"><span class="pre">load_user()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.views.login"><code class="docutils literal notranslate"><span class="pre">login()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.views.logout"><code class="docutils literal notranslate"><span class="pre">logout()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.views.manage_users"><code class="docutils literal notranslate"><span class="pre">manage_users()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.views.new_account"><code class="docutils literal notranslate"><span class="pre">new_account()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.views.refresh_login"><code class="docutils literal notranslate"><span class="pre">refresh_login()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.blueprints.users.html#dashboard.blueprints.users.views.user"><code class="docutils literal notranslate"><span class="pre">user()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -182,11 +407,11 @@
       <div class="clearer"></div>
     </div>
     <div class="footer">
-      &copy;2020, TIGRLab.
+      &#169;2020, TIGRLab.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.1.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
       
       |
       <a href="../_sources/api/dashboard.blueprints.rst.txt"
