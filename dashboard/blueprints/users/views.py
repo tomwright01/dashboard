@@ -6,13 +6,13 @@ from dashboard import lm
 from . import user_bp
 from .utils import get_user_form, parse_enabled_sites
 from .forms import UserForm
-from ...models import User, AccountRequest
+from ...models import User, AccountRequest, db
 from ...utils import report_form_errors, dashboard_admin_required
 
 
 @lm.user_loader
 def load_user(uid):
-    return User.query.get(int(uid))
+    return db.session.get(User, int(uid))
 
 
 @user_bp.before_app_request
@@ -58,7 +58,7 @@ def user(user_id=None):
         return redirect(url_for('users.user'))
 
     if user_id:
-        user = User.query.get(user_id)
+        user = db.session.get(User, user_id)
     else:
         user = current_user
 
@@ -74,7 +74,7 @@ def user(user_id=None):
             flash("You are not authorized to update other users' settings.")
             return redirect(url_for('users.user'))
 
-        updated_user = User.query.get(submitted_id)
+        updated_user = db.session.get(User, submitted_id)
 
         if form.update_access.data:
             # Give user access to a new study or site
@@ -123,7 +123,7 @@ def manage_users(user_id=None, approve=False):
         # URL gets parsed into unicode
         approve = False
 
-    user_request = AccountRequest.query.get(user_id)
+    user_request = db.session.get(AccountRequest, user_id)
     if not approve:
         try:
             user_request.reject()

@@ -1,8 +1,9 @@
 import logging
 
 from github import Github
+
 from flask import current_app, flash
-from ...models import Study
+from ...models import Study, db
 
 logger = logging.getLogger(__name__)
 
@@ -22,7 +23,7 @@ def search_issues(token, timepoint):
 
 def handle_issue(token, issue_form, study_id, timepoint):
     title = clean_issue_title(issue_form.title.data, timepoint)
-    study = Study.query.get(study_id)
+    study = db.session.get(Study, study_id)
 
     staff_member = study.choose_staff_contact()
     if staff_member:

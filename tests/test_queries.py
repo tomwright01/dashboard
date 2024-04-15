@@ -344,7 +344,7 @@ class TestGetScanQc:
         self.assert_result_matches_expected(result, expected)
         # An extra check, to confirm no UTO records are found for this user
         for item in result:
-            assert "_UTO_" not in item[0]
+            assert "_UTO_" not in item['name']
 
     def test_returns_empty_list_when_user_access_rights_prevents_access(self):
         result = dashboard.queries.get_scan_qc(study=["STUDY3"], user_id=2)
@@ -376,8 +376,17 @@ class TestGetScanQc:
             "  ORDER BY s.name;"
         )
 
-        result_names = [item[0] for item in result]
+        result_names = [item['name'] for item in result]
         assert result_names == expected
+
+    def test_returns_list_of_dicts(self):
+        result = dashboard.queries.get_scan_qc()
+        for item in result:
+            assert isinstance(item, dict)
+        for item in result:
+            assert 'name' in item
+            assert 'comment' in item
+            assert 'approved' in item
 
     def get_records(self, sql_query):
         return [item[0] for item in query_db(sql_query)]
@@ -387,7 +396,7 @@ class TestGetScanQc:
         assert len(result) == len(expected)
 
         # Ensure every entry expected is found in the actual result
-        scan_list = [item[0] for item in result]
+        scan_list = [item['name'] for item in result]
         for scan in expected:
             assert scan in scan_list
 

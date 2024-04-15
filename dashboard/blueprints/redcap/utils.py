@@ -8,7 +8,7 @@ from werkzeug.routing import RequestRedirect
 import redcap as REDCAP
 
 from .monitors import monitor_scan_import, monitor_scan_download
-from dashboard.models import Session, Timepoint, RedcapRecord, RedcapConfig
+from dashboard.models import Session, Timepoint, RedcapRecord, RedcapConfig, db
 from dashboard.queries import get_studies
 from dashboard.exceptions import RedcapException
 import datman.scanid
@@ -20,7 +20,7 @@ def get_redcap_record(record_id, fail_url=None):
     if not fail_url:
         fail_url = url_for('main.index')
 
-    record = RedcapRecord.query.get(record_id)
+    record = db.session.get(RedcapRecord, record_id)
 
     if record is None:
         logger.error("Tried and failed to retrieve RedcapRecord with "
@@ -149,7 +149,7 @@ def set_session(name):
     name = ident.get_full_subjectid_with_timepoint()
     num = datman.scanid.get_session_num(ident)
 
-    session = Session.query.get((name, num))
+    session = db.session.get(Session, (name, num))
     if not session:
         timepoint = get_timepoint(ident)
         session = timepoint.add_session(num)
@@ -166,7 +166,8 @@ def find_study(ident):
 
 
 def get_timepoint(ident):
-    timepoint = Timepoint.query.get(ident.get_full_subjectid_with_timepoint())
+    timepoint = db.session.get(
+        Timepoint, ident.get_full_subjectid_with_timepoint())
     if not timepoint:
         study = find_study(ident)[0]
         timepoint = study.add_timepoint(ident)

@@ -90,7 +90,7 @@ def get_session(name, num):
     """
     Used by datman. Return a specific session or None
     """
-    return Session.query.get((name, num))
+    return db.session.get(Session, (name, num))
 
 
 def get_timepoint(name, bids_ses=None, study=None):
@@ -98,7 +98,7 @@ def get_timepoint(name, bids_ses=None, study=None):
     Used by datman. Return one timepoint or None
     """
     if not bids_ses:
-        return Timepoint.query.get(name)
+        return db.session.get(Timepoint, name)
 
     query = Timepoint.query.filter(Timepoint.bids_name == name)\
                            .filter(Timepoint.bids_session == bids_ses)
@@ -263,7 +263,7 @@ def get_scantypes(tag_id=None, create=False):
     if not tag_id:
         return Scantype.query.all()
 
-    found = Scantype.query.get(tag_id)
+    found = db.session.get(Scantype, tag_id)
     if found:
         return [found]
 
@@ -327,9 +327,9 @@ def get_scan_qc(approved=True, blacklisted=True, flagged=True,
             by scan name. Defaults to False.
 
     Returns:
-        list(tuple): A list of tuples of the format
-            (scan name, status, comment), where 'status' is a boolean value
-            that represents whether the scan was approved or
+        list(dict): A list of tuples of the format
+            {name: str, approved: bool, comment: str}, where 'status' is a
+            boolean value that represents whether the scan was approved or
             flagged/blacklisted.
     """
 
@@ -424,8 +424,12 @@ def get_scan_qc(approved=True, blacklisted=True, flagged=True,
     # Restrict output values to only needed columns
     query = query.with_entities(Scan.name, ScanChecklist.approved,
                                 ScanChecklist.comment)
+    output = [
+        {'name': item[0], 'approved': item[1], 'comment': item[2]}
+        for item in query.all()
+    ]
 
-    return query.all()
+    return output
 
 
 def query_metric_values_byid(**kwargs):

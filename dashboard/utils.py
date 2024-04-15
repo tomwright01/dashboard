@@ -10,7 +10,7 @@ from flask_login import current_user
 from flask import flash, url_for, request, redirect
 from werkzeug.routing import RequestRedirect
 
-from .models import Timepoint, Scan
+from .models import Timepoint, Scan, db
 
 logger = logging.getLogger(__name__)
 
@@ -39,7 +39,7 @@ def report_form_errors(form):
 
 
 def get_timepoint(study_id, timepoint_id, current_user):
-    timepoint = Timepoint.query.get(timepoint_id)
+    timepoint = db.session.get(Timepoint, timepoint_id)
 
     if timepoint is None:
         flash("Timepoint {} does not exist".format(timepoint_id))
@@ -67,7 +67,7 @@ def get_scan(scan_id, study_id, current_user, fail_url=None):
     if not fail_url:
         fail_url = url_for('main.index')
 
-    scan = Scan.query.get(scan_id)
+    scan = db.session.get(Scan, scan_id)
 
     if scan is None:
         logger.error("User {} attempted to retrieve scan with ID {}. "

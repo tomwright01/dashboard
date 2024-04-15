@@ -41,7 +41,7 @@ def add_studies(study_conf):
             study.update_site(site, create=True)
 
             for tag in study_conf[study_id][site]:
-                if not models.Scantype.query.get(tag):
+                if not models.db.session.get(models.Scantype, tag):
                     models.db.session.add(models.Scantype(tag))
                 study.update_scantype(site, tag, create=True)
 
@@ -95,7 +95,8 @@ def query_db(sql_query):
         list: A list of tuples containing the result.
     """
     try:
-        records = models.db.session.execute(sql_query).fetchall()
+        records = models.db.session.execute(
+            sqlalchemy.text(sql_query)).fetchall()
     except sqlalchemy.exc.ProgrammingError:
         models.db.session.rollback()
         raise

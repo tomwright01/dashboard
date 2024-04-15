@@ -7,6 +7,7 @@ Create Date: 2021-12-10 19:25:50.213883
 """
 from alembic import op
 import sqlalchemy as sa
+from sqlalchemy import text
 
 
 # revision identifiers, used by Alembic.
@@ -68,11 +69,11 @@ def upgrade():
     )
 
     conn = op.get_bind()
-    records = conn.execute(
+    records = conn.execute(text(
         'select study_sites.study, study_sites.site, study_scantypes.scantype '
         '  from study_sites, study_scantypes '
         '  where study_sites.study = study_scantypes.study;'
-    )
+    ))
     op.bulk_insert(
         expected_scans,
         [{'study': record[0],

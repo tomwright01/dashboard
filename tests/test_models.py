@@ -10,7 +10,7 @@ from dashboard import models
 class TestUser:
 
     def test_get_sites_returns_all_sites_avail_for_user(self):
-        user = models.User.query.get(1)
+        user = models.db.session.get(models.User, 1)
         result = user.get_sites()
         expected = self.get_result(
             "SELECT DISTINCT ss.site"
@@ -23,40 +23,40 @@ class TestUser:
         assert sorted(result) == sorted(expected)
 
     def test_get_sites_doesnt_duplicate_site_names(self):
-        user = models.User.query.get(1)
+        user = models.db.session.get(models.User, 1)
         result = user.get_sites()
         expected = list(set(result))
         assert sorted(result) == sorted(expected)
 
     def test_get_sites_returns_list_of_strings_for_reg_user(self):
-        user = models.User.query.get(1)
+        user = models.db.session.get(models.User, 1)
         result = user.get_sites()
 
         assert all(isinstance(item, str) for item in result)
 
     def test_get_sites_returns_list_of_strings_for_admin_user(self):
-        admin = models.User.query.get(2)
+        admin = models.db.session.get(models.User, 2)
         assert admin.dashboard_admin is True
 
         result = admin.get_sites()
         assert all(isinstance(item, str) for item in result)
 
     def test_get_sites_sorts_results_for_user(self):
-        user = models.User.query.get(1)
+        user = models.db.session.get(models.User, 1)
         assert user.dashboard_admin is False
 
         result = user.get_sites()
         assert result == sorted(result)
 
     def test_get_sites_sorts_results_for_admin(self):
-        user = models.User.query.get(2)
+        user = models.db.session.get(models.User, 2)
         assert user.dashboard_admin is True
 
         result = user.get_sites()
         assert result == sorted(result)
 
     def test_get_studies_sorts_results_for_user(self):
-        user = models.User.query.get(1)
+        user = models.db.session.get(models.User, 1)
         assert user.dashboard_admin is False
 
         result = [item.id for item in user.get_studies()]
@@ -69,7 +69,7 @@ class TestUser:
         assert result == expected
 
     def test_get_studies_sorts_results_for_admins(self):
-        admin = models.User.query.get(2)
+        admin = models.db.session.get(models.User, 2)
         assert admin.dashboard_admin is True
 
         result = [item.id for item in admin.get_studies()]

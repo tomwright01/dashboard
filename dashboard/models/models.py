@@ -8,7 +8,7 @@ from random import randint
 
 from flask import current_app
 from flask_login import UserMixin, AnonymousUserMixin
-from sqlalchemy import and_, or_, exists, func
+from sqlalchemy import and_, or_, exists, func, select
 from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.orm import deferred, backref
 from sqlalchemy.schema import UniqueConstraint, ForeignKeyConstraint
@@ -138,6 +138,7 @@ class User(PermissionMixin, UserMixin, TableMixin, db.Model):
     analysis_comments = db.relationship('AnalysisComment')
     sessions_reviewed = db.relationship('Session')
     pending_approval = db.relationship('AccountRequest',
+                                       back_populates='user',
                                        uselist=False,
                                        cascade="all, delete")
 
@@ -480,7 +481,8 @@ class AccountRequest(TableMixin, db.Model):
                         db.Integer,
                         db.ForeignKey("users.id", ondelete='CASCADE'),
                         primary_key=True)
-    user = db.relationship('User', uselist=False)
+    user = db.relationship(
+        'User', back_populates="pending_approval", uselist=False)
 
     def __init__(self, user_id):
         self.user_id = user_id
@@ -704,7 +706,7 @@ class Study(TableMixin, db.Model):
         """
         if isinstance(site_id, Site):
             site_id = Site.id
-        elif not Site.query.get(site_id):
+        elif not db.session.get(Site, site_id):
             if not create:
                 raise InvalidDataException("Site {} does not exist.".format(
                     site_id))
@@ -779,13 +781,14 @@ class Study(TableMixin, db.Model):
                 site_id, self.id))
 
         if not isinstance(scantype, Scantype):
-            found = Scantype.query.get(scantype)
+            found = db.session.get(Scantype, scantype)
             if not found:
                 raise InvalidDataException("Undefined scan type "
                                            "{}.".format(scantype))
             scantype = found
 
-        expected = ExpectedScan.query.get((self.id, site_id, scantype.tag))
+        expected = db.session.get(ExpectedScan,
+                                  (self.id, site_id, scantype.tag))
         if expected:
             if num:
                 expected.count = num
@@ -824,10 +827,12 @@ class Study(TableMixin, db.Model):
         return len(timepoints)
 
     def outstanding_issues(self):
-        # use from_self to get a tuple of Session.name, Session.num like from
-        # the other queries
-        new_sessions = self.get_new_sessions().from_self(
-            Session.name, Session.num).all()
+        # Get a tuple of Session.name, Session.num like from
+        # the other two queries
+        new_sessions_q = select(Session.name, Session.num).where(
+            Session.name.in_(self.get_new_sessions()))
+        new_sessions = db.session.execute(new_sessions_q).all()
+
         missing_redcap = self.get_missing_redcap()
         missing_scans = self.get_missing_scans()
 
@@ -906,8 +911,8 @@ class Study(TableMixin, db.Model):
         that are expecting a redcap survey but dont yet have one.
         """
         uses_redcap = self.get_sessions_using_redcap()
-        sessions = uses_redcap.filter(SessionRedcap.name == None).from_self(
-            Session.name, Session.num)
+        sessions = uses_redcap.filter(SessionRedcap.name == None) \
+            .with_entities(Session.name, Session.num)
         return sessions.all()
 
     def get_missing_scans(self):
@@ -922,7 +927,7 @@ class Study(TableMixin, db.Model):
                 and_(Scan.timepoint == Session.name, Scan.repeat ==
                      Session.num))).filter(~exists().where(
                          and_(Session.name == EmptySession.name, Session.num ==
-                              EmptySession.num))).from_self(
+                              EmptySession.num))).with_entities(
                                   Session.name, Session.num)
         return sessions.all()
 
@@ -1049,7 +1054,7 @@ class Study(TableMixin, db.Model):
         return self._pipelines
 
     def add_pipeline(self, pipeline_key, view, name, scope):
-        record = StudyPipeline.query.get((self.id, pipeline_key))
+        record = db.session.get(StudyPipeline, (self.id, pipeline_key))
         if not record:
             record = StudyPipeline(study_id=self.id, pipeline_id=pipeline_key)
         record.view = view
@@ -1246,7 +1251,7 @@ class Timepoint(TableMixin, db.Model):
         return any(sess.missing_scans() for sess in self.sessions.values())
 
     def dismiss_redcap_error(self, session_num):
-        existing = SessionRedcap.query.get((self.name, session_num))
+        existing = db.session.get(SessionRedcap, (self.name, session_num))
         if existing:
             return
         session_redcap = SessionRedcap(self.name, session_num)
@@ -2200,7 +2205,7 @@ class RedcapConfig(TableMixin, db.Model):
     def get_config(config_id=None, project=None, instrument=None, url=None,
                    version=None, create=False):
         if config_id:
-            found = RedcapConfig.query.get(config_id)
+            found = db.session.get(RedcapConfig, config_id)
             cfg = [found] if found else []
         elif project and url and instrument:
             cfg = RedcapConfig.query \
@@ -2387,6 +2392,7 @@ class StudySite(TableMixin, db.Model):
         primaryjoin='and_(StudySite.study_id==StudyUser.study_id,'
         'or_(StudySite.site_id==StudyUser.site_id,'
         'StudyUser.site_id==None))',
+        viewonly=True,
         cascade='all, delete')
     site = db.relationship('Site', back_populates='studies')
     study = db.relationship('Study', back_populates='sites')
@@ -2394,7 +2400,8 @@ class StudySite(TableMixin, db.Model):
                                 back_populates='study_site',
                                 cascade='all, delete',
                                 lazy='joined')
-    expected_scans = db.relationship('ExpectedScan', cascade="all, delete")
+    expected_scans = db.relationship(
+        'ExpectedScan', overlaps="scantypes", cascade="all, delete")
 
     __table_args__ = (UniqueConstraint(study_id, site_id), )
 
