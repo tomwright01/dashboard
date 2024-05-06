@@ -15,6 +15,6 @@ PyYAML==6.0.1
 rauth==0.7.3
 SQLAlchemy==2.0.28
 uwsgi==2.0.24
-Werkzeug==3.0.1
+Werkzeug==3.0.3
 WTForms==3.1.2
 xnat==0.5.3
